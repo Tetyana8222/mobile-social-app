@@ -1,24 +1,25 @@
+import { View, Text } from "react-native";
+import { styles } from "./styles";
 //підключаємо шрифти
-//хук для хавантаження шрифтів в проект
+//хук для завантаження шрифтів в проект
 import { useFonts } from "expo-font";
 
-// import { StatusBar } from "expo-status-bar";
-// import { StyleSheet, Text, View } from "react-native";
+export default function App() {
+  const [fontsLoaded] = useFonts({
+    "Roboto-Regular": require("./assets/fonts/Roboto/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto/Roboto-Medium.ttf"),
+    "Roboto-Bold": require("./assets/fonts/Roboto/Roboto-Bold.ttf"),
+    1: require("./assets/fonts/Roboto/1.ttf"),
+  });
 
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <Text>react-native 1hw</Text>
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
+  if (!fontsLoaded) {
+    return null;
+  }
 
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
+  return (
+    <View style={styles.container}>
+      <Text style={styles.defaultFont}>Lesson 2</Text>
+      <Text style={styles.myFont}>Lesson 2</Text>
+    </View>
+  );
+}

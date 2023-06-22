@@ -17,14 +17,20 @@ const RegistrationScreen = () => {
         resizeMode="cover"
       >
         <View style={styles.registerContainer}>
-          <Text>
-            <Text style={styles.text}>Реєстрація</Text>
-          </Text>
+          <View style={styles.avatarContainer}>
+            <View style={styles.pictureContainer}></View>
+            {/* <View>+</View> */}
+          </View>
+
+          <Text style={styles.text}>Реєстрація</Text>
 
           <View>
-            <TextInput placeholder="Логін"></TextInput>
-            <TextInput placeholder="Адреса електронної пошти"></TextInput>
-            <TextInput placeholder="Пароль"></TextInput>
+            <TextInput placeholder="Логін" style={styles.input}></TextInput>
+            <TextInput
+              placeholder="Адреса електронної пошти"
+              style={styles.input}
+            ></TextInput>
+            <TextInput placeholder="Пароль" style={styles.input}></TextInput>
           </View>
         </View>
       </ImageBackground>

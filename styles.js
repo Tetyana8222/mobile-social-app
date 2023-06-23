@@ -23,6 +23,9 @@ export const styles = StyleSheet.create({
     fontWeight: "medium",
     textAlign: "center",
   },
+  inputWrap: {
+    position: "relative",
+  },
   input: {
     width: 343,
     height: 50,
@@ -32,6 +35,18 @@ export const styles = StyleSheet.create({
     borderColor: "#E8E8E8",
     padding: 16,
     marginBottom: 16,
+  },
+  pressableShowPassword: {
+    position: "absolute",
+    right: 16,
+
+    top: "35%",
+    transform: [{ translateY: -8 }],
+  },
+  showPasswordText: {
+    color: "#1B4371",
+    textAlign: "right",
+    fontSize: 16,
   },
   avatarContainer: {
     width: 120,
@@ -44,11 +59,57 @@ export const styles = StyleSheet.create({
     // marginLeft: "auto",
     // marginRight: "auto",
   },
-  // defaultFont: {
-  //   fontSize: 20,
-  // },
-  // myFont: {
-  //   fontFamily: "1",
-  //   fontSize: 20,
-  // },
+  addCross: {
+    width: 25,
+    height: 25,
+    zIndex: 100,
+    position: "absolute",
+    right: -12.5,
+    bottom: 14,
+  },
+  registerButton: {
+    display: "flex",
+    width: 343,
+    flexDirection: "column",
+    alignItems: "center",
+    gap: 12,
+    borderRadius: 100,
+    backgroundColor: "#FF6C00",
+    marginBottom: 16,
+  },
+  buttonText: {
+    color: "#FFF",
+    textAlign: "center",
+    fontSize: 16,
+    paddingHorizontal: 32,
+    paddingVertical: 16,
+  },
+  linkWrap: {
+    marginLeft: "auto",
+    marginRight: "auto",
+  },
+  linkText: {
+    color: "#1B4371",
+    fontFamily: "Roboto-Regular",
+    fontSize: 16,
+    lineHeight: 19,
+  },
+  underlineText: {
+    color: "#1B4371",
+    fontFamily: "Roboto-Regular",
+    fontSize: 16,
+    lineHeight: 19,
+    textDecorationLine: "underline",
+  },
+  loginContainer: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 25,
+    height: 489,
+    marginTop: "auto",
+    alignItems: "center",
+  },
+  starsInput: {
+    color: "#212121",
+    fontSize: 15,
+  },
 });

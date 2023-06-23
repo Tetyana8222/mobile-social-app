@@ -4,6 +4,7 @@ import { styles } from "./styles";
 //хук для завантаження шрифтів в проект
 import { useFonts } from "expo-font";
 import RegistrationScreen from "./Screens/RegistrationScreen/RegistrationScreen";
+import LoginScreen from "./Screens/ LoginScreen/ LoginScreen";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -17,5 +18,6 @@ export default function App() {
     return null;
   }
 
-  return <RegistrationScreen />;
+  return <LoginScreen />;
+  // <RegistrationScreen />;
 }

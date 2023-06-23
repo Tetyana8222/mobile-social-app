@@ -48,8 +48,8 @@ const LoginScreen = () => {
             </Pressable>
             <Pressable style={styles.linkWrap}>
               <Text style={styles.linkText}>
-                Немає акаунту?
-                <Text style={styles.underlineText}> Зареєструватися</Text>
+                Немає акаунту?&nbsp;
+                <Text style={styles.underlineText}>Зареєструватися</Text>
               </Text>
             </Pressable>
           </View>

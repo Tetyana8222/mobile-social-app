@@ -8,6 +8,11 @@ import {
   Image,
   Pressable,
   Button,
+  TouchableWithoutFeedback,
+  KeyboardAvoidingView,
+  Platform,
+  ScrollView,
+  Keyboard,
 } from "react-native";
 import PhotoBG from "../../assets/images/PhotoBG.jpg";
 import { styles } from "../../styles";
@@ -20,41 +25,50 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <ImageBackground
-        source={PhotoBG}
-        style={styles.imagebg}
-        resizeMode="cover"
-      >
-        <View style={styles.loginContainer}>
-          <Text style={styles.text}>Увійти</Text>
-          <View>
-            <View>
-              <TextInput
-                placeholder="Адреса електронної пошти"
-                style={styles.input}
-              ></TextInput>
-            </View>
-            <View>
-              <TextInput
-                placeholder="*********"
-                style={styles.input}
-              ></TextInput>
-              <Pressable style={styles.pressableShowPassword}>
-                <Text style={styles.showPasswordText}>Показати</Text>
-              </Pressable>
-            </View>
-            <Pressable style={styles.registerButton}>
-              <Text style={styles.buttonText}>Увійти</Text>
-            </Pressable>
-            <Pressable style={styles.linkWrap}>
-              <Text style={styles.linkText}>
-                Немає акаунту?&nbsp;
-                <Text style={styles.underlineText}>Зареєструватися</Text>
-              </Text>
-            </Pressable>
-          </View>
-        </View>
-      </ImageBackground>
+      <TouchableWithoutFeedback>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          style={styles.container}
+        >
+          <ImageBackground
+            source={PhotoBG}
+            style={styles.imagebg}
+            resizeMode="cover"
+          >
+            <ScrollView contentContainerStyle={styles.scrollArea}>
+              <View style={styles.loginContainer}>
+                <Text style={styles.text}>Увійти</Text>
+                <View>
+                  <View>
+                    <TextInput
+                      placeholder="Адреса електронної пошти"
+                      style={styles.input}
+                    ></TextInput>
+                  </View>
+                  <View>
+                    <TextInput
+                      placeholder="*********"
+                      style={styles.input}
+                    ></TextInput>
+                    <Pressable style={styles.pressableShowPassword}>
+                      <Text style={styles.showPasswordText}>Показати</Text>
+                    </Pressable>
+                  </View>
+                  <Pressable style={styles.registerButton}>
+                    <Text style={styles.buttonText}>Увійти</Text>
+                  </Pressable>
+                  <Pressable style={styles.linkWrap}>
+                    <Text style={styles.linkText}>
+                      Немає акаунту?&nbsp;
+                      <Text style={styles.underlineText}>Зареєструватися</Text>
+                    </Text>
+                  </Pressable>
+                </View>
+              </View>
+            </ScrollView>
+          </ImageBackground>
+        </KeyboardAvoidingView>
+      </TouchableWithoutFeedback>
     </View>
   );
 };

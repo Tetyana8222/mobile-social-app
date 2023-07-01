@@ -112,4 +112,14 @@ export const styles = StyleSheet.create({
     color: "#212121",
     fontSize: 15,
   },
+
+  scrollArea: {
+    height: 489,
+    paddingTop: 32,
+    marginTop: "auto",
+    borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: "#fff",
+    alignItems: "center",
+  },
 });

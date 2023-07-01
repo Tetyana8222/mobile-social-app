@@ -114,8 +114,8 @@ export const styles = StyleSheet.create({
   },
 
   scrollArea: {
-    height: 489,
-    paddingTop: 32,
+    height: 549,
+    // paddingTop: 32,
     marginTop: "auto",
     borderTopLeftRadius: 25,
     borderTopRightRadius: 25,

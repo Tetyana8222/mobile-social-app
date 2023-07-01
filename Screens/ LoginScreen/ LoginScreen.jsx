@@ -25,15 +25,16 @@ const LoginScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
-      <TouchableWithoutFeedback>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : "height"}
-          style={styles.container}
-        >
-          <ImageBackground
-            source={PhotoBG}
-            style={styles.imagebg}
-            resizeMode="cover"
+
+      <ImageBackground
+        source={PhotoBG}
+        style={styles.imagebg}
+        resizeMode="cover"
+      >
+        <TouchableWithoutFeedback>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
           >
             <ScrollView contentContainerStyle={styles.scrollArea}>
               <View style={styles.loginContainer}>
@@ -66,9 +67,9 @@ const LoginScreen = () => {
                 </View>
               </View>
             </ScrollView>
-          </ImageBackground>
-        </KeyboardAvoidingView>
-      </TouchableWithoutFeedback>
+          </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
+      </ImageBackground>
     </View>
   );
 };

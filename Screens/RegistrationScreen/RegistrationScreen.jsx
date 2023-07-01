@@ -8,6 +8,9 @@ import {
   Image,
   Pressable,
   Button,
+  ScrollView,
+  TouchableWithoutFeedback,
+  KeyboardAvoidingView,
 } from "react-native";
 
 import PhotoBG from "../../assets/images/PhotoBG.jpg";
@@ -27,38 +30,53 @@ const RegistrationScreen = () => {
         style={styles.imagebg}
         resizeMode="cover"
       >
-        <View style={styles.registerContainer}>
-          <View style={styles.avatarContainer}>
-            <View style={styles.pictureContainer}></View>
-            <Image style={styles.addCross} source={addCross} />
-          </View>
+        <TouchableWithoutFeedback>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === "ios" ? "padding" : "height"}
+            style={styles.container}
+          >
+            <ScrollView contentContainerStyle={styles.scrollArea}>
+              <View style={styles.registerContainer}>
+                <View style={styles.avatarContainer}>
+                  <View style={styles.pictureContainer}></View>
+                  <Image style={styles.addCross} source={addCross} />
+                </View>
 
-          <Text style={styles.text}>Реєстрація</Text>
+                <Text style={styles.text}>Реєстрація</Text>
 
-          <View>
-            <View>
-              <TextInput placeholder="Логін" style={styles.input}></TextInput>
-            </View>
-            <View>
-              <TextInput
-                placeholder="Адреса електронної пошти"
-                style={styles.input}
-              ></TextInput>
-            </View>
-            <View>
-              <TextInput placeholder="Пароль" style={styles.input}></TextInput>
-              <Pressable style={styles.pressableShowPassword}>
-                <Text style={styles.showPasswordText}>Показати</Text>
-              </Pressable>
-            </View>
-            <Pressable style={styles.registerButton}>
-              <Text style={styles.buttonText}>Зареєструватися</Text>
-            </Pressable>
-            <Pressable style={styles.linkWrap}>
-              <Text style={styles.linkText}>Вже є акаунт? Увійти</Text>
-            </Pressable>
-          </View>
-        </View>
+                <View>
+                  <View>
+                    <TextInput
+                      placeholder="Логін"
+                      style={styles.input}
+                    ></TextInput>
+                  </View>
+                  <View>
+                    <TextInput
+                      placeholder="Адреса електронної пошти"
+                      style={styles.input}
+                    ></TextInput>
+                  </View>
+                  <View>
+                    <TextInput
+                      placeholder="Пароль"
+                      style={styles.input}
+                    ></TextInput>
+                    <Pressable style={styles.pressableShowPassword}>
+                      <Text style={styles.showPasswordText}>Показати</Text>
+                    </Pressable>
+                  </View>
+                  <Pressable style={styles.registerButton}>
+                    <Text style={styles.buttonText}>Зареєструватися</Text>
+                  </Pressable>
+                  <Pressable style={styles.linkWrap}>
+                    <Text style={styles.linkText}>Вже є акаунт? Увійти</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </ScrollView>
+          </KeyboardAvoidingView>
+        </TouchableWithoutFeedback>
       </ImageBackground>
     </View>
   );

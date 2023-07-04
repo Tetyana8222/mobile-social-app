@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import {
   StatusBar,
   View,
@@ -21,6 +22,19 @@ const LoginScreen = () => {
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [focusEmailInput, setFocusEmailInput] = useState(false);
+  const [focusPasswordInput, setFocusPasswordInput] = useState(false);
+  const [hidePassword, setHidePassword] = useState(true);
+
+  const logIn = () => {
+    setLogin("");
+    setEmail("");
+    setPassword("");
+  };
+
+  const togglePassword = () => {
+    setHidePassword(!hidePassword);
+  };
 
   return (
     <View style={styles.container}>
@@ -43,22 +57,42 @@ const LoginScreen = () => {
                   <View>
                     <TextInput
                       placeholder="Адреса електронної пошти"
-                      style={styles.input}
+                      onChangeText={setEmail}
+                      onFocus={() => setFocusEmailInput(true)}
+                      onBlur={() => setFocusEmailInput(false)}
+                      style={
+                        focusEmailInput
+                          ? [styles.input, styles.focusedInput]
+                          : styles.input
+                      }
                     ></TextInput>
                   </View>
                   <View>
                     <TextInput
                       placeholder="*********"
-                      style={styles.input}
+                      onChangeText={setPassword}
+                      secureTextEntry={hidePassword}
+                      onFocus={() => setFocusPasswordInput(true)}
+                      onBlur={() => setFocusPasswordInput(false)}
+                      style={
+                        focusPasswordInput
+                          ? [styles.input, styles.focusedInput]
+                          : styles.input
+                      }
                     ></TextInput>
-                    <Pressable style={styles.pressableShowPassword}>
-                      <Text style={styles.showPasswordText}>Показати</Text>
+                    <Pressable
+                      style={styles.pressableShowPassword}
+                      onPress={togglePassword}
+                    >
+                      <Text style={styles.showPasswordText}>
+                        {hidePassword ? "Показати" : "Сховати"}
+                      </Text>
                     </Pressable>
                   </View>
                   <Pressable style={styles.registerButton}>
                     <Text style={styles.buttonText}>Увійти</Text>
                   </Pressable>
-                  <Pressable style={styles.linkWrap}>
+                  <Pressable style={styles.linkWrap} onPress={logIn}>
                     <Text style={styles.linkText}>
                       Немає акаунту?&nbsp;
                       <Text style={styles.underlineText}>Зареєструватися</Text>

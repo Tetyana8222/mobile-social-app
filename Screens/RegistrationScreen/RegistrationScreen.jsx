@@ -108,7 +108,6 @@ const RegistrationScreen = () => {
                       onPress={togglePassword}
                     >
                       <Text style={styles.showPasswordText}>
-                        {" "}
                         {hidePassword ? "Показати" : "Сховати"}
                       </Text>
                     </Pressable>

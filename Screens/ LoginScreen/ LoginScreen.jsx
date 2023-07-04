@@ -18,9 +18,9 @@ import PhotoBG from "../../assets/images/PhotoBG.jpg";
 import { styles } from "../../styles";
 
 const LoginScreen = () => {
-  // const [login, setLogin] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
+  const [login, setLogin] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>

@@ -36,6 +36,12 @@ export const styles = StyleSheet.create({
     padding: 16,
     marginBottom: 16,
   },
+  focusedInput: {
+    borderWidth: 1,
+    borderColor: "#FF6C00",
+    backgroundColor: "#FFFFFF",
+  },
+
   pressableShowPassword: {
     position: "absolute",
     right: 16,
@@ -107,6 +113,11 @@ export const styles = StyleSheet.create({
     height: 489,
     marginTop: "auto",
     alignItems: "center",
+    // width: "100%",
+    // height: "61%",
+    // position: "absolute",
+    // left: 0,
+    // bottom: 0,
   },
   starsInput: {
     color: "#212121",
